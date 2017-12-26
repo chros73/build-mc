@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.0.1-4.8.20](https://github.com/chros73/build-mc/tree/1.0.1-4.8.20) (2017-12-26)
+**Implemented enhancements:**
+
+- Copy additional skins into build dir [\#2](https://github.com/chros73/build-mc/issues/2)
+
 ## [1.0-4.8.20](https://github.com/chros73/build-mc/tree/1.0-4.8.20) (2017-12-26)
 **Implemented enhancements:**
 
