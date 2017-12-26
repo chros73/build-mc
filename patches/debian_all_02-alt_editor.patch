@@ -1,0 +1,25 @@
+Last-Update: 2012-08-04
+Reviewed-by: Dmitry Smirnov <onlyjob@member.fsf.org>
+Forwarded: yes
+Bug-Debian: http://bugs.debian.org/592208
+Bug-MC: https://www.midnight-commander.org/ticket/2799
+Bug-MC: https://www.midnight-commander.org/ticket/2638
+Author: Yury V. Zaytsev <yury@shurup.com>
+Description: Detect that mc was launched from alternatives symlink
+ This patch in needed to mcedit to start if run as 'editor' symlink
+ from alternatives.
+ .
+ As of 2012-05-01 upstream believe this should be customised per
+ distribution as therefore refused to commit.
+
+--- a/src/args.c
++++ b/src/args.c
+@@ -767,7 +767,7 @@ mc_setup_by_args (int argc, char **argv,
+     base = x_basename (argv[0]);
+     tmp = (argc > 0) ? argv[1] : NULL;
+ 
+-    if (strncmp (base, "mce", 3) == 0 || strcmp (base, "vi") == 0)
++    if (strncmp (base, "mce", 3) == 0 || strcmp (base, "vi") == 0 || strcmp (base, "editor") == 0)
+     {
+         /* mce* or vi is link to mc */
+         mc_global.mc_run_mode = MC_RUN_EDITOR;

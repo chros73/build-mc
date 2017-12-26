@@ -1,0 +1,23 @@
+Last-Update: 2017-06-29
+Forwarded: https://www.midnight-commander.org/ticket/2110#comment:11
+Author: Dmitry Borisyuk" <q1werty@i.com.ua>
+Reviewed-by: Dmitry Smirnov <onlyjob@member.fsf.org>
+Bug-MC: https://www.midnight-commander.org/ticket/2987
+Bug-MC: https://www.midnight-commander.org/ticket/2110
+Bug-Debian: http://bugs.debian.org/703741
+Description: clear unfinished text before 'cd' to avoid accidental execution
+ send C-k C-u to the shell before sending 'cd' command to erase previous
+ unfinished text (C-k is needed for bash if the cursor is in the middle of
+ the line).
+
+--- a/src/subshell/common.c
++++ b/src/subshell/common.c
+@@ -1286,7 +1286,7 @@
+ 
+     /* The initial space keeps this out of the command history (in bash
+        because we set "HISTCONTROL=ignorespace") */
+-    write_all (mc_global.tty.subshell_pty, " cd ", 4);
++    write_all (mc_global.tty.subshell_pty, "\013\025 cd ", 6);
+ 
+     if (vpath != NULL)
+     {

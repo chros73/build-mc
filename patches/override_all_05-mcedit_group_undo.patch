@@ -1,0 +1,17 @@
+Last-Update: 2017-06-29
+Forwarded: not-needed
+Author: Dmitry Smirnov <onlyjob@member.fsf.org>
+Updated-by: Denis Briand <debian@denis-briand.fr>
+Description: enable "Group undo" by default (mcedit)
+
+--- a/src/editor/edit.c
++++ b/src/editor/edit.c
+@@ -94,7 +94,7 @@
+ 
+ gboolean enable_show_tabs_tws = TRUE;
+ gboolean option_check_nl_at_eof = FALSE;
+-gboolean option_group_undo = FALSE;
++gboolean option_group_undo = TRUE;
+ gboolean show_right_margin = FALSE;
+ 
+ char *option_backup_ext = NULL;

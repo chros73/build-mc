@@ -1,0 +1,45 @@
+Last-Update: 2013-09-08
+Forwarded: no
+Author: Dmitry Smirnov <onlyjob@member.fsf.org>
+Bug-Debian: http://bugs.debian.org/665763
+Bug-Debian: http://bugs.debian.org/544058
+Description: Use mailcap viewer instead of various hardcoded viewers
+ * dvi viewer (do_open_action)
+ * images viewer
+ * .ram|.rm files viewer
+
+--- a/misc/ext.d/doc.sh.in
++++ b/misc/ext.d/doc.sh.in
+@@ -162,7 +162,7 @@ do_open_action() {
+         ;;
+     dvi)
+         if [ -n "$DISPLAY" ]; then
+-            (xdvi "${MC_EXT_FILENAME}" &)
++            (run-mailcap "${MC_EXT_FILENAME}" &)
+         else
+             dvisvga "${MC_EXT_FILENAME}" || \
+                 dvi2tty "${MC_EXT_FILENAME}" | ${PAGER:-more}
+--- a/misc/ext.d/image.sh
++++ b/misc/ext.d/image.sh
+@@ -40,8 +40,6 @@ do_open_action() {
+         ;;
+     *)
+         if [ -n "$DISPLAY" ]; then
+-            (gqview "${MC_EXT_FILENAME}" &)
+-        elif see >/dev/null 2>&1; then
+             (see "${MC_EXT_FILENAME}" &)
+         else
+             (zgv "${MC_EXT_FILENAME}" &)
+--- a/misc/ext.d/video.sh
++++ b/misc/ext.d/video.sh
+@@ -23,8 +23,8 @@ do_open_action() {
+     filetype=$1
+ 
+     case "${filetype}" in
+-    ram)
+-        (realplay "${MC_EXT_FILENAME}" >/dev/null 2>&1 &)
++    ram|rm)
++        (see "${MC_EXT_FILENAME}" >/dev/null 2>&1 &)
+         ;;
+     *)
+         if [ -n "$DISPLAY" ]; then

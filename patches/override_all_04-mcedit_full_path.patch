@@ -1,0 +1,30 @@
+ast-Update: 2017-06-29
+Forwarded: not-needed
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=764226
+Bug-Upstream: http://www.midnight-commander.org/ticket/3285
+Author: Dmitry Smirnov <onlyjob@member.fsf.org>
+Updated-by: Denis Briand <debian@denis-briand.fr>
+Description: 'mcedit' status line to show full path to file, like in 'mcview'.
+
+--- a/doc/man/mcedit.1.in
++++ b/doc/man/mcedit.1.in
+@@ -601,7 +601,7 @@
+ "\fB-\fR\fB+\fR\fB*\fR\fB\\\fR\fB,\fR\fB.\fR\fB;\fR\fB:\fR\fB&\fR\fB>\fR".
+ .TP
+ .I editor_state_full_filename
+-Show full path name in the status line. If disabled (default), only base name of the
++Show full path name in the status line. If disabled, only base name of the
+ file is shown.
+ .SH MISCELLANEOUS
+ You can use scanf search and replace to search and replace a C format
+--- a/src/editor/edit.c
++++ b/src/editor/edit.c
+@@ -90,7 +90,7 @@
+ gboolean option_line_state = FALSE;
+ int option_line_state_width = 0;
+ gboolean option_cursor_after_inserted_block = FALSE;
+-gboolean option_state_full_filename = FALSE;
++gboolean option_state_full_filename = TRUE;
+ 
+ gboolean enable_show_tabs_tws = TRUE;
+ gboolean option_check_nl_at_eof = FALSE;
