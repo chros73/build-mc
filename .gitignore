@@ -1,0 +1,5 @@
+# Download cache
+tarballs/
+
+# Component subdirs
+mc-*/
