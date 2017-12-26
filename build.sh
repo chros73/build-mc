@@ -293,6 +293,11 @@ patch_project() { # Patch project
     $SED_I s%MC_CURRENT_VERSION\ \"\${CURR_MC_VERSION}\"%MC_CURRENT_VERSION\ \"$version\"% "$tag_name/maint/utils/version.sh"
 }
 
+copy_contrib() { # Copy files from contrib dir
+    # Skins into final place
+    [[ -d "$SRC_DIR/contrib/skins/" && -d "$INST_DIR/share/$project/skins/" ]] && cp -f "$SRC_DIR/contrib/skins/"* "$INST_DIR/share/$project/skins/"
+}
+
 build_project() { # Build project
     [[ -e $TARBALLS_DIR/DONE-PKG ]] || fail "You need to '$0 download' first!"
     [[ -d $TARBALLS_DIR ]] && [[ -f $TARBALLS_DIR/DONE-$project ]] && rm -f $TARBALLS_DIR/DONE-$project >/dev/null
@@ -306,6 +311,8 @@ build_project() { # Build project
         || fail "during building '$project'!" )
 
     touch $TARBALLS_DIR/DONE-$project
+
+    copy_contrib
 }
 
 install() { # Install project
