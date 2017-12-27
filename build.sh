@@ -43,7 +43,8 @@ tag_name="$project-$version"
 SRC_DIR=$(cd $(dirname $0) && pwd)
 
 # Extra options handling (set some overridable defaults)
-: ${INSTALL_ROOT:=$HOME}
+#: ${INSTALL_ROOT:=$HOME}
+: ${INSTALL_ROOT:=/home/user}
 INST_DIR="$INSTALL_ROOT/lib/$tag_name"
 : ${ROOT_SYS_DIR:=/usr/local}
 : ${ROOT_PKG_DIR:=/opt}
@@ -80,7 +81,8 @@ esac
 
 
 # Debian-like package deps
-BUILD_PKG_DEPS=( e2fslibs-dev gettext libaspell-dev libglib2.0-dev libgpm-dev libslang2-dev libssh2-1-dev libx11-dev unzip locales )
+#BUILD_PKG_DEPS=( e2fslibs-dev gettext libaspell-dev libglib2.0-dev libgpm-dev libslang2-dev libssh2-1-dev libx11-dev unzip locales )
+BUILD_PKG_DEPS=( e2fsprogs-devel gettext aspell-devel glib2-devel gpm-devel slang-devel libssh2-devel libx11-devel groff unzip )
 
 
 # gcc optimization
@@ -216,7 +218,7 @@ check_deps() { # Check command and package dependency
 }
 
 prep() { # root_dir : Check dependency and create basic directories
-    check_deps
+#    check_deps
 
     if [ "$1" == "$HOME" ]; then
         [[ -f $INST_DIR/bin/$project ]] && fail "Current '$tag_name' version is already built in '$INST_DIR', it has to be removed manually before a new compilation."
