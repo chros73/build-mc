@@ -2,7 +2,7 @@
 verbose=true
 pause_after_run=1
 shell_patterns=true
-auto_save_setup=true
+auto_save_setup=false
 preallocate_space=false
 auto_menu=false
 use_internal_view=true
@@ -81,11 +81,11 @@ mcview_eof=
 ignore_ftp_chattr_errors=true
 skin=modarin256-thin
 
+filepos_max_saved_entries=1024
+
 editor_drop_selection_on_copy=true
 editor_state_full_filename=true
 editor_stop_format_chars=-+*\\,.;:&>
-
-filepos_max_saved_entries=1024
 
 [Layout]
 message_visible=1
@@ -115,10 +115,27 @@ clipboard_paste=
 
 [Colors]
 base_color=
-tmux-256color=
+xterm=
 color_terminals=
 
+xterm-256color=
+
+screen-256color=
+
+screen=
+
+screen-256color-bce=
+
+putty-256color=
+
+screen-256color-bce-s=
+
+xterm-256color-bce=
+
+tmux-256color=
+
 [Panels]
+simple_swap=false
 show_mini_info=true
 kilobyte_si=false
 mix_all_files=false
@@ -140,21 +157,30 @@ quick_search_mode=2
 panel_scroll_center=false
 select_flags=6
 
-simple_swap=false
-
 [FindFile]
-file_case_sens=true
+file_case_sens=false
 file_shell_pattern=true
 file_find_recurs=true
 file_skip_hidden=false
 file_all_charsets=false
-content_case_sens=true
+content_use=false
+content_case_sens=false
 content_regexp=false
 content_first_hit=false
 content_whole_words=false
 content_all_charsets=false
 ignore_dirs_enable=true
 ignore_dirs=
+
+[terminal:tmux-256color]
+f13=\\e[1\;2P
+f14=\\e[1\;2Q
+f15=\\e[1\;2R
+f16=\\e[29~
+f17=\\e[15\;2~
+f18=\\e[17\;2~
+f19=\\e[18\;2~
+f20=\\e[19\;2~
 
 [Panelize]
 Find *.orig after patching=find . -name \\*.orig -print
