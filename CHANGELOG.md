@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.2-4.8.20](https://github.com/chros73/build-mc/tree/1.0.2-4.8.20) (2018-01-22)
+**Implemented enhancements:**
+
+- Refactor build script and rename patches [\#4](https://github.com/chros73/build-mc/issues/4)
+- Modify sample config ini file [\#3](https://github.com/chros73/build-mc/issues/3)
+
 ## [1.0.1-4.8.20](https://github.com/chros73/build-mc/tree/1.0.1-4.8.20) (2017-12-26)
 **Implemented enhancements:**
 
