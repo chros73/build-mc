@@ -18,7 +18,7 @@ Compilation
 Installing build dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, you need to install a few **required** packages — **and no, this is not optional in any way**. They require about ``250 MB`` disk space. These steps must be performed by the ``root`` user (i.e. in a root shell, or by writing ``sudo`` before the actual command):
+First, you need to install a few **required** packages — **and no, this is not optional in any way**. They require about ``280 MB`` disk space. These steps must be performed by the ``root`` user (i.e. in a root shell, or by writing ``sudo`` before the actual command):
 
 .. code-block:: shell
 
@@ -58,11 +58,11 @@ or system wide (needs root shell, or by writing ``sudo`` before the actual comma
 
 You can compile the specified ``git`` version by adding a ``git`` second argument to the above commands.
 
-If you want to turn off optimization for some reason (e.g. moving the build to a different box) it can be done by adding ``OPTIMIZE_BUILD=no`` in front of the above commands, e.g.:
+If you want to turn off optimization for some reason (e.g. moving the build to a different box) it can be done by adding ``optimize_build=no`` in front of the above commands, e.g.:
 
 .. code-block:: shell
 
-   OPTIMIZE_BUILD=no time nice -n 19 ./build.sh mc git
+   optimize_build=no time nice -n 19 ./build.sh mc git
 
 
 Change log
