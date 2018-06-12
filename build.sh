@@ -10,8 +10,8 @@ owner=MidnightCommander
 project=mc
 
 # Specify overridable defaults for project to compile from:
-: ${version:=4.8.20}                  # release version
-: ${git_project:=79b6a77}             # 2017-12-28 @ master (git branch/commit: [master|218dcea])
+: ${version:=4.8.21}                  # release version
+: ${git_project:=3726db2}             # 2018-06-03 @ master v4.8.21 (git branch/commit: [master|218dcea])
 
 
 
@@ -149,6 +149,8 @@ tarballs=( "https://github.com/$owner/$project/archive/$version.tar.gz" )
 src_pkg_hashes=('4.8.19.tar.gz:6d9e8f8460466055e7fb867b067811e4')
 src_pkg_hashes+=('4.8.20.tar.gz:05bbbe11037db12e812d66fa00479c3e')
 src_pkg_hashes+=('mc-79b6a77.tar.gz:1b92e4b0fa4516aaf8f57b137eca2692')
+src_pkg_hashes+=('4.8.21.tar.gz:a4e44e16691fa69ce78b2b88f60fd499')
+src_pkg_hashes+=('mc-3726db2.tar.gz:718bc9a7d10f1e65e000795fb011e0fb')
 
 # Command dependency
 build_cmd_deps=('coreutils:md5sum')

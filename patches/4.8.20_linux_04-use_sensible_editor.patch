@@ -1,0 +1,18 @@
+Last-Update: 2015-03-23
+Forwarded: not-needed
+Bug-Debian: http://bugs.debian.org/549202
+Author: Denis Briand <denis@narcan.fr>
+Author: Yury V. Zaytsev <yury@shurup.com>
+Description: Use sensible-editor to edit files
+
+--- a/lib/global.h
++++ b/lib/global.h
+@@ -127,7 +127,7 @@
+ #define PATH_ENV_SEP ':'
+ #define TMPDIR_DEFAULT "/tmp"
+ #define SCRIPT_SUFFIX ""
+-#define get_default_editor() "vi"
++#define get_default_editor() "sensible-editor"
+ #define OS_SORT_CASE_SENSITIVE_DEFAULT 1
+ #define UTF8_CHAR_LEN 6
+ 
