@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.0.2-4.8.21](https://github.com/chros73/build-mc/tree/1.0.2-4.8.21) (2018-06-12)
+**Implemented enhancements:**
+
+- Upgrade to official 4.8.21 release [\#6](https://github.com/chros73/build-mc/issues/6)
+
 ## [1.0.2-4.8.20](https://github.com/chros73/build-mc/tree/1.0.2-4.8.20) (2018-01-22)
 **Implemented enhancements:**
 
