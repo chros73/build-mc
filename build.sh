@@ -316,8 +316,9 @@ patch_project() { # Patch project
 }
 
 copy_contrib() { # Copy files from contrib dir
-    # Skins into final place
+    # Skin, syntax files into final place
     [[ -d "$src_dir/contrib/skins/" && -d "$inst_dir/share/$project/skins/" ]] && cp -f "$src_dir/contrib/skins/"* "$inst_dir/share/$project/skins/"
+    [[ -d "$src_dir/contrib/syntax/" && -d "$inst_dir/share/$project/syntax/" ]] && cp -f "$src_dir/contrib/syntax/"* "$inst_dir/share/$project/syntax/"
 }
 
 build_project() { # Build project
@@ -468,6 +469,7 @@ case "$1" in
     patch-mc)   display_env_vars; prep "$install_root"; clean_all; download; patch_project ;;
     build-mc)   display_env_vars; prep "$install_root"; clean_all; download; build_project ;;
     patchbuild) display_env_vars; prep "$install_root"; clean_all; download; patch_project; build_project ;;
+    cp-contrib) copy_contrib ;;
     sm-home)    symlink_binary_home ;;
     sm-inst)    symlink_binary_inst ;;
     check-home) check "$install_root" ;;
