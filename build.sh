@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Build optimized version of Midnight Commander including patches into custom location
-#   project version: 1.0.2
+#   project version: 1.0.3
 #   project URL: https://github.com/chros73/build-mc
 
 
