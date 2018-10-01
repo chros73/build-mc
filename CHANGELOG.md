@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.0.3-4.8.21](https://github.com/chros73/build-mc/tree/1.0.3-4.8.21) (2018-10-01)
+**Implemented enhancements:**
+
+- Add rtorrent syntax highlighting [\#7](https://github.com/chros73/build-mc/issues/7)
+
 ## [1.0.2-4.8.21](https://github.com/chros73/build-mc/tree/1.0.2-4.8.21) (2018-06-12)
 **Implemented enhancements:**
 
